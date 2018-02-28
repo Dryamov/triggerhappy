@@ -1,0 +1,2 @@
+## Add symlink to keyboard and give permission for group wheel
+ENV{ID_INPUT_KEYBOARD}=="?*", SYMLINK+="input/hot_kbd", GROUP="wheel", MODE="0660"

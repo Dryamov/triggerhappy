@@ -1,10 +1,11 @@
 [Unit]
-Description=triggerhappy global hotkey daemon
-After=local-fs.target
+Description=Hotkey user service
+Documentation=man:thd 
 
 [Service]
 Type=notify
-ExecStart=/usr/sbin/thd --triggers /etc/triggerhappy/triggers.d/ --socket /run/thd.socket --user nobody --deviceglob /dev/input/event*
+ExecStart=/usr/bin/thd --triggers .config/triggerhappy/triggers.conf /dev/input/hot_kbd
+Restart=on-failure
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
