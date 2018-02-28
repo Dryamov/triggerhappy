@@ -1,0 +1,5 @@
+[Socket]
+ListenDatagram=%t/thd.socket
+
+[Install]
+WantedBy=sockets.target

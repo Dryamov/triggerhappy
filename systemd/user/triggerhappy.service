@@ -1,0 +1,11 @@
+[Unit]
+Description=Hotkey user service
+Documentation=man:thd 
+
+[Service]
+Type=notify
+ExecStart=/usr/bin/thd --triggers .config/triggerhappy/triggers.conf --socket %t/thd.socket   /dev/input/hot_kbd
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
